@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,400;1,700&display=swap');
+
+/* ###################################################################################################
+R E S E T
+################################################################################################### */
+ul,
+li{
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #E5B8F4;
+  font-family: 'Poppins', sans-serif;
+}
+
+aside ul li {
+    padding: 5px 0px;
+
+}
+h2{
+  font-family: 'Poppins', sans-serif;
+  color: #E5B8F4;
+}
+
+body,
+h2 {
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+.wrapper {
+  padding: 0px 250px;
+}
+
+.hola {
+  display: grid;
+  grid-template-columns: 400px 2fr;
+}
+
+
+
+
+/* ###################################################################################################
+H E A D E R
+################################################################################################### */
+
+
+header {
+  background-color: #18122B;
+}
+
+.navegacion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0px;
+
+}
+
+.navegacion img{
+  width: 100px;
+  border-radius: 100px;
+}
+
+.navegacion ul {
+  display: flex;
+  gap: 40px;
+}
+
+
+/* ###################################################################################################
+M A I N
+################################################################################################### */
+
+main {
+  background-color: #443C68;
+  height: 70%;
+}
+
+main.wrapper {
+  padding: 30px 250px;
+  /* padding: 0px 250px; */
+}
+
+.content{
+  padding: 30px 250px 0px 250px;
+  color: white;
+  height: 100%;
+}
+.caja {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  
+}
+
+.cajita {
+  background-color: #393053;
+  text-align: center;
+}
+main.wrapper h2 {
+  padding: 10px 0px;
+  color: #E5B8F4;
+}
+.cajita a{
+  color: #E5B8F4;
+}
+
+.cajita:last-child img {
+  height: 87.8%;
+}
+
+.indice {
+  background-color: #393053;
+    
+    padding-right: 30px;
+    padding-top: 30px;
+}
+aside {
+    position: sticky;
+    top: 10px;
+}
+/* ###################################################################################################
+F O O T E R
+################################################################################################### */
+
+footer {
+  background-color: #18122B;
+  text-align: center;
+  padding: 20px 0px;
+  color: white;
+  font-size: large;
+  /* position: relative; */
+  /* width: 100%; */
+  /* bottom: 0px; */
+}

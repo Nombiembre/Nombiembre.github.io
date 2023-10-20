@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inclusive+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+header {
+ position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: #4873c4;
+  width: auto;
+}
+
+.nave {
+  position: relative;
+  top: 0px;
+  left: 0p;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;  
+  padding: 70px 300px 0px 300px;
+}
+
+
+.nave #nav-center {
+  /*! margin-right: 2%; */
+  list-style: none;
+  justify-self: center; 
+}
+
+.nave nav ul {
+  list-style: none;
+  text-decoration: none;  
+}
+
+.nave li {
+  padding: 0 30px;
+  display: inline-block;
+
+}
+
+.nave li:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+  
+}
+
+.nave a {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  
+}
+
+.nave a:hover {
+  color: #64CCC5;
+  transition: all 0.2s;
+  border-bottom: #141E46;
+}
+
+
+.download {
+  position: relative;
+  max-width: 8%;
+  left: 243px;
+  bottom: -67px;
+}
+
+.phone{
+ width: 290px;
+  left: 1020px;
+  bottom: -211px;
+  position: absolute;
+}
+
+.logo{
+  width: 86px;
+  left: 208px;
+  bottom: -34px;
+  position: absolute;
+}
+
+
+
