@@ -1,207 +1,281 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fjalla+One&family=Inclusive+Sans:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
 /* ###################################################################################################
 R E S E T
 ################################################################################################### */
-ul,
-li{
-  list-style: none;
-  margin: 0;
-  padding: 0;
+:root { 
+  --clr-foreground: white;
+  --clr-primary: #231f21;
+  --clr-accent: #fdbdbd;
+  --clr-dark: #090909;
+  --clr-gradient: linear-gradient(to right, #210c0f 0%,  #eeedf2 33%, #eef1f3 66%, #534360 100%);
+
+  --ff-primary: 'Roboto Mono', monospace;
+  
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi: 500;
+  --fw-bold: 700;
+
+  --fs-300: .875rem;
+  --fs-400: 1rem;
+  --fs-500: calc(var(--fs-400)*1.2);
+  --fs-700: 1.5rem;
+  --fs-900: 2.5rem;
+
+  --border-title: 1px solid white;
+  --bd-radius: 10px;
+  
+  --shadow-dark: 0 0 2em var(--clr-primary);
 }
 
-img {
+.primary-title { font-size: var(--fs-900); font-weight: var(--fw-bold); color: var(--clr-foreground); font-family: var(--ff-heading);}
+.secundary-title { font-size: var(--fs-700); color: var(--clr-foreground);}
+.terciary-title {font-size: var(--fs-500); color: var(--clr-foreground);}
+.fs-regular {font-size: var(--fs-400);}
+.fw-bold {font-weight: var(--fw-bold);}
+.mayus {text-transform: uppercase;}
+.center {text-align: center;}
+
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body{
+  /* height: 100%; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+}
+
+main {
+   flex: 1;
+  }
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
   max-width: 100%;
   display: block;
 }
 
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 a {
   text-decoration: none;
-  color: white;
-  /* font-family: 'Poppins', sans-serif; */
+  color: var(--clr-foreground);
 }
 
-aside ul li {
-    padding: 5px 0px;
-
-}
-h2{
-  /* font-family: 'Poppins', sans-serif; */
-  color: white;
+p,
+a {
+  font-family: var(--ff-body);
 }
 
-body,
-h2 {
-  overflow-x: hidden;
-  margin: 0px;
-  font-family: 'Roboto Mono', monospace;
+p {
+  padding: 16px 0px;
 }
 
-.wrapper {
-  padding: 0px 300px;
+.flow > * + * {
+  margin-top: 3em;
 }
-
-
 /* ###################################################################################################
 H E A D E R
 ################################################################################################### */
 
-
-header {
-  background-color: #231f21;
-}
-
-.navegacion{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* padding: 10px 0px; */
-  gap: 80px;
-  padding-right: 20px;
-  text-decoration: inherit;
-}
-
-
-.module-border-wrap {
-  background: linear-gradient(to right, #210c0f 0%,  #eeedf2 33%, #eef1f3 66%, #534360 100%);
-  padding-bottom: 6px;
-}
-
-.module-border-wrap-top {
-  background: linear-gradient(to right, #210c0f 0%,  #eeedf2 33%, #eef1f3 66%, #534360 100%);
-  padding-top: 6px;
-}
-
 .module {
-  background: #231f21;
+  background: var(--clr-primary);
   color: white;
   padding: 2rem;
 }
+
+.module-border-wrap {
+  background: var(--clr-gradient);
+  padding-bottom: 6px;
+  position: relative;
+  bottom: 0px;
+}
+
+.navegacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding-right: 20px;
+  
+}
+
+.module-border-wrap-top {
+  background: var(--clr-gradient);
+  padding-top: 6px;
+}
+
 
 .navegacion img{
   width: 100px;
   border-radius: 100px;
 }
 
-.navegacion img:hover {
+.navegacion img:hover{
   transform: scale(1.2);
   transition: all 0.2s;
 }
 
-
-.navegacion a {
-  font-family: 'Roboto Mono', monospace;
-  font-size: large;
-  font-weight: bold;
+.navegacion ul {
+  list-style: none;
 }
 
 .navegacion ul li a:hover {
-  color: #fdbdbd;
+  color: var(--clr-accent);
   transition: all 0.2s;
   border-bottom: #141E46;
+}
+
+@media (max-width: 50em) {
+  .navegacion{
+    display: grid;
+    /* grid-template-columns: repeat(1,); */
+    gap: 3em;
+    /* outline: 3px solid greenyellow; */
+  }
+
+  .navegacion a:nth-child(2){
+    /* outline: 3px solid pink; */
+    grid-row: 1;
+  }
+
 }
 
 /* ###################################################################################################
 M A I N
 ################################################################################################### */
 
-main {
-  background-color: #090909;
- 
-}
-main.content {
+
+.barry {
   background-color: #5e5e5e;
   background-image: url("../imagenes/sistemasoperativos.png");
   background-attachment: fixed;
   background-blend-mode: multiply;
-  color: white;
-  padding: 30px 300px;
-}
-
-main h2{
-  text-align: center;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 2.5em;
-  font-weight: bold;
-  text-transform: uppercase;
+  color: var(--clr-foreground); 
+  background-position: center;
+  
 }
 
 
-.second-header {
-  color:#fdbdbd;
+
+.autor {
   text-align: center;
+  font-size: var(--fs-regular);
+  color: var(--clr-accent);
+  font-weight: var(--fw-regular);
   text-transform: uppercase;
-  font-size: large;
-  margin-top: 0px;
   margin-bottom: 50px;
 }
 
 main h3{
   padding-top: 20px;
-  border-top: 1px solid white;
-  /* text-align: center; */
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.5em;
-  font-weight: 200;
+  border-top: var(--border-title);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-regular);
   text-transform: uppercase;
+  font-family: var(--ff-heading);
 }
 
-main.wrapper {
-  padding: 30px 250px;
-  /* padding: 0px 250px; */
+/* #############################
+G R I D */
+main {
+  background-color: var(--clr-dark);
+}
+.wrapper {
+  --max-width: 1110px;
+  --padding: 1rem;
+  
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+  padding-block: 3em;
 }
 
-
-.caja {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  padding-top: 50px;
-}
-
-.cajita {
-  background-color: #231f21;
+.tiny-box {
+  background-color: var(--clr-primary);
   text-align: center;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-dark);
 }
 
-.cajita:hover {
+.tiny-box:hover {
   transform: scale(1.05);
   transition: all 0.2s;
 }
-main.wrapper h2 {
-  padding: 10px 0px;
-  color: white;
-}
-.cajita a{
-  color: white;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-  font-size: 20px;
-  text-transform: uppercase;
+
+@media (min-width: 50em) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding-top: 50px;
+  }
 }
 
-
-
-.indice {
-  background-color: #393053;
-    
-    padding-right: 30px;
-    padding-top: 30px;
-}
-aside {
-    position: sticky;
-    top: 10px;
-}
 /* ###################################################################################################
 F O O T E R
 ################################################################################################### */
 
 footer {
-  background-color: #231f21;
+  background-color: var(--clr-primary);
   text-align: center;
-  /* padding: 20px 0px; */
-  color: white;
-  font-size: large;
-  /* position: relative; */
-  /* width: 100%; */
-  /* bottom: 0px; */
+  color: var(--clr-foreground);
+  font-size: var(--fs-regular);
+
 }
