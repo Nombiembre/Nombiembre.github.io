@@ -183,7 +183,7 @@ H E A D E R
   border-bottom: #141E46;
 }
 
-@media (max-width: 50em) {
+@media (max-width: 40em) {
   .navegacion{
     display: grid;
     /* grid-template-columns: repeat(1,); */
@@ -259,7 +259,7 @@ main {
   transition: all 0.2s;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 40em) {
   .box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
