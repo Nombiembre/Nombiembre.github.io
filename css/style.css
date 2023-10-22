@@ -1,8 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fjalla+One&family=Inclusive+Sans:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;1,300;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrow-up-o.css');
-/* ######################################################################################################
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+/* ###################################################################################################
 R E S E T
-###################################################################################################### */
+################################################################################################### */
+:root { 
+  --clr-foreground: white;
+  --clr-primary: #231f21;
+  --clr-accent: #fdbdbd;
+  --clr-dark: #090909;
+  --clr-gradient: linear-gradient(to right, #210c0f 0%,  #eeedf2 33%, #eef1f3 66%, #534360 100%);
+
+  --ff-primary: 'Roboto Mono', monospace;
+  
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 400;
+  --fw-semi: 500;
+  --fw-bold: 700;
+
+  --fs-300: .875rem;
+  --fs-400: 1rem;
+  --fs-500: calc(var(--fs-400)*1.2);
+  --fs-700: 1.5rem;
+  --fs-900: 2.5rem;
+
+  --border-title: 1px solid white;
+  --bd-radius: 10px;
+  
+  --shadow-dark: 0 0 2em var(--clr-primary);
+}
+
+.primary-title { font-size: var(--fs-900); font-weight: var(--fw-bold); color: var(--clr-foreground); font-family: var(--ff-heading);}
+.secundary-title { font-size: var(--fs-700); color: var(--clr-foreground);}
+.terciary-title {font-size: var(--fs-500); color: var(--clr-foreground);}
+.fs-regular {font-size: var(--fs-400);}
+.fw-bold {font-weight: var(--fw-bold);}
+.mayus {text-transform: uppercase;}
+.center {text-align: center;}
+
+
+/* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
 *,
@@ -12,17 +49,10 @@ R E S E T
 }
 
 /* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+* {
   margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -36,9 +66,21 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+html,
+body{
+  /* height: 100%; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  
+}
+
+main {
+   flex: 1;
+  }
+
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -55,13 +97,6 @@ picture {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -79,142 +114,168 @@ select {
   }
 }
 
-* {
-   font-family: "Montserrat", sans-serif;
+a {
+  text-decoration: none;
+  color: var(--clr-foreground);
 }
 
-.wrapper h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2em;
-  border-bottom: solid;
-  border-bottom-width: 8px;
-  border-color: #4062bb;
-  text-align: center;
-  display: inline-block;
-  margin-top: 20px;
+p,
+a {
+  font-family: var(--ff-body);
 }
 
-.texto-aqua {
-  color: #64CCC5;
-} 
-/* ######################################################################################################
+p {
+  padding: 16px 0px;
+}
+
+.flow > * + * {
+  margin-top: 3em;
+}
+/* ###################################################################################################
 H E A D E R
-###################################################################################################### */
+################################################################################################### */
 
-header {
-    background-color: #4873c4;
-    /* outline: 3px solid orange; */
-    padding-bottom: 40px;
+.module {
+  background: var(--clr-primary);
+  color: white;
+  padding: 2rem;
 }
 
-.wrapper {
-    margin: 0px 250px;
+.module-border-wrap {
+  background: var(--clr-gradient);
+  padding-bottom: 6px;
+  position: relative;
+  bottom: 0px;
 }
 
-.primary-nav {
-    display: flex;
-    justify-content: space-between;
-    /* outline: 3px solid red; */
-    padding-top: 50px;
+.navegacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding-right: 20px;
+  
 }
 
-.logo {
-    display: block;
-    width: 178px;
+.module-border-wrap-top {
+  background: var(--clr-gradient);
+  padding-top: 6px;
 }
 
-.primary-nav ul{
-    display: flex;
-    gap: 30px;
-}
-.primary-nav li{
-    list-style: none;
+
+.navegacion img{
+  width: 100px;
+  border-radius: 100px;
 }
 
-.primary-nav a {
-    text-decoration: none;
-    color: white;
-}
-
-.primary-nav img:hover {
+.navegacion img:hover{
   transform: scale(1.2);
   transition: all 0.2s;
 }
 
-.titulo {
-  margin: 100px 100px 25px 100px;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
+.navegacion ul {
+  list-style: none;
+}
+
+.navegacion ul li a:hover {
+  color: var(--clr-accent);
+  transition: all 0.2s;
+  border-bottom: #141E46;
+}
+
+@media (max-width: 50em) {
+  .navegacion{
+    display: grid;
+    /* grid-template-columns: repeat(1,); */
+    gap: 3em;
+    /* outline: 3px solid greenyellow; */
+  }
+
+  .navegacion a:nth-child(2){
+    /* outline: 3px solid pink; */
+    grid-row: 1;
+  }
+
+}
+
+/* ###################################################################################################
+M A I N
+################################################################################################### */
+
+
+.barry {
+  background-color: #5e5e5e;
+  background-image: url("../imagenes/sistemasoperativos.png");
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  color: var(--clr-foreground); 
+  background-position: center;
   
 }
 
-.miembros {
-padding-top: 80px;
-}
 
-.titulo p {
-    font-size: small;
-    font-weight: 400;
-}
 
-/* ######################################################################################################
-C O N T E N T
-###################################################################################################### */
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  margin: 50px 0px;
-}
-
-.work {
-  background-color: #f8f8f8fa;
-  border-radius: 10px;
+.autor {
   text-align: center;
+  font-size: var(--fs-regular);
+  color: var(--clr-accent);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
 
-.work a{
-  text-decoration: none;
-  color: black;
+main h3{
+  padding-top: 20px;
+  border-top: var(--border-title);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  font-family: var(--ff-heading);
 }
 
-.work:hover {
-  background-color: #eaeaea;
-  transform: scale(1.03);
+/* #############################
+G R I D */
+main {
+  background-color: var(--clr-dark);
+}
+.wrapper {
+  --max-width: 1110px;
+  --padding: 1rem;
+  
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+  padding-block: 3em;
+}
+
+.tiny-box {
+  background-color: var(--clr-primary);
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-dark);
+}
+
+.tiny-box:hover {
+  transform: scale(1.05);
   transition: all 0.2s;
 }
 
-.work p {
-  font-family: Fira Sans;
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  padding: 20px;
+@media (min-width: 50em) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding-top: 50px;
+  }
 }
 
-.work img {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-
-/* ######################################################################################################
+/* ###################################################################################################
 F O O T E R
-###################################################################################################### */
+################################################################################################### */
 
 footer {
-  background-color: #4873c4;
-  position: relative;
-  bottom: 0px;
+  background-color: var(--clr-primary);
   text-align: center;
-  color: white;
-  padding: 20px;
-  z-index: 9;
-  font-family: 'Fjalla One', sans-serif;
+  color: var(--clr-foreground);
+  font-size: var(--fs-regular);
+
 }
-
-
-
-
-
